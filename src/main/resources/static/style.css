@@ -1,0 +1,54 @@
+.body {
+  background-image: url('/img/tavola.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+ 
+}
+
+.wall {
+  background-image: url('/img/wall.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.p1 {
+  font-family: 'Mochiy Pop One', sans-serif;
+  font-size: 40px;
+}
+
+.rad{
+	border-radius: 100px;
+}
+
+.tavola{
+	margin-left: auto; 
+    margin-right: 120px;
+    
+}
+
+.menu{
+	font-family: 'Mochiy Pop One', sans-serif;
+	font-size: 60px;
+}
+
+.shad{
+	  -webkit-box-shadow: 8px 6px 12px 5px #000000;
+      -moz-box-shadow: 8px 6px 12px 5px #000000;
+      -o-box-shadow: 8px 6px 12px 5px #000000;
+      box-shadow: 8px 6px 12px 5px #000000;
+}
+
+.tavolozza {
+  background-image: url('https://envato-shoebox-0.imgix.net/be29/1674-5875-42c7-b59e-3d54db4603c6/K-P-197-Chim-05421.jpg?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=1600&s=deb957f72b02abd02d16c60b159d1501');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.navbarfont{
+	font-family: 'Mochiy Pop One', sans-serif;
+    font-size: 20px;	
+}
+
+
+
