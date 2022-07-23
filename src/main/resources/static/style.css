@@ -2,7 +2,16 @@
   background-image: url('/img/tavola.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  
  
+}
+
+
+
+a:hover {
+  color: rgb(255, 0, 0) !important;
+ 
+  
 }
 
 .wall {
@@ -50,5 +59,33 @@
     font-size: 20px;	
 }
 
+.glass{
+   
+background: rgba(90, 170, 255, 0.07);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5.6px);
+-webkit-backdrop-filter: blur(5.6px);
+-webkit-box-shadow: 5px 5px 10px 0px #1E0C28;
+-moz-box-shadow: 5px 5px 10px 0px #1E0C28;
+-o-box-shadow: 5px 5px 10px 0px #1E0C28;
+box-shadow: 5px 5px 10px 0px #1E0C28;
+border-radius: 20px;
+}
+
+.padd {
+	  background-image: url('https://mission-house.de/wp-content/uploads/2017/05/3163-scaled.jpg');
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	  padding-top: 80px;
+      padding-bottom: 120px;
+      
+}
+
+.nomargin{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
 
 
