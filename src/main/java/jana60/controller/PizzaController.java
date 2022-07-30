@@ -20,7 +20,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import jana60.model.Ingredienti;
 import jana60.model.Pizza;
+import jana60.repository.IngredientiRepository;
 import jana60.repository.PizzaRepository;
 
 
@@ -30,6 +32,8 @@ public class PizzaController {
     
 	@Autowired 
 	private PizzaRepository pizza;
+	@Autowired 
+	private IngredientiRepository ingr;
 	
 	@GetMapping("/")
 	public String home(Model model) {
@@ -41,6 +45,7 @@ public class PizzaController {
 	@GetMapping("/add")
 	  public String pizzaForm(Model model) {
 	    model.addAttribute("pizza", new Pizza());
+	    model.addAttribute("listaingredienti", ingr.findAllByOrderByName());
 	    return "add";
 	  }
 	
@@ -52,6 +57,7 @@ public class PizzaController {
 	    if (result.isPresent()) {
 	      // preparo il template con al form passandogli il book trovato su db
 	      model.addAttribute("pizza", result.get());
+	      model.addAttribute("listaingredienti", ingr.findAllByOrderByName());
 	      return "/add";
 	    } else {
 	      throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Questa pizza non e' presente nel mio database");
@@ -106,5 +112,30 @@ public class PizzaController {
 	    } else {
 	      throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Pizza non presente nel database");
 	    }
+	  
+}
+	  
+	  @GetMapping("/ingredienti")
+	  public String ingredienti(Model model) {
+		  model.addAttribute("ingredienti", ingr.findAll());    
+		  model.addAttribute("ingredientenuovo", new Ingredienti());
+		return "ingredienti.html";
+		
+	  
+	  
+}
+	  @PostMapping("/ingredienti/save")
+	  public String salvaingredienti(@Valid @ModelAttribute ("ingredientenuovo") Ingredienti formIngr, BindingResult br, Model model ) {
+		  if (br.hasErrors()) {
+			 br.addError(new FieldError("ingredienti", "name", "il campo non deve essere vuoto" ));
+			 
+			return "/ingredienti"; 
+		  } else {
+			  
+			  ingr.save(formIngr);
+			 return "redirect:/ingredienti";
+		  }
+		  
+	
 	  }
 }

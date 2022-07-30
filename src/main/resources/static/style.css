@@ -26,6 +26,11 @@ a:hover {
   font-size: 40px;
 }
 
+.p2 {
+  font-family: 'Mochiy Pop One', sans-serif;
+  font-size: 15px;
+}
+
 .rad{
 	border-radius: 100px;
 }
@@ -61,7 +66,7 @@ a:hover {
 
 .glass{
    
-background: rgba(90, 170, 255, 0.07);
+background: rgba(210, 0, 255, 0.05);
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(5.6px);
 -webkit-backdrop-filter: blur(5.6px);

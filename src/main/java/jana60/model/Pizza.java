@@ -1,9 +1,12 @@
 package jana60.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 
@@ -24,6 +27,16 @@ public class Pizza {
 		
 		private String prezzo;
 		
+		@ManyToMany
+		private List<Ingredienti> ListaIngredienti;
+
+		public List<Ingredienti> getListaIngredienti() {
+			return ListaIngredienti;
+		}
+
+		public void setListaIngredienti(List<Ingredienti> listaIngredienti) {
+			ListaIngredienti = listaIngredienti;
+		}
 
 		public Integer getId() {
 			return id;
@@ -50,6 +63,9 @@ public class Pizza {
 		}
 
 		public String getPrezzo() {
+			if (prezzo == null) {
+				return "";
+			}
 			return prezzo + " €";
 		}
 
