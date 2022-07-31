@@ -16,47 +16,35 @@
     <title>Menu' Pizze'</title>
   </head>
   <body class="wall">
+     
+     
      <div th:replace="fragment :: navbar"></div>
-      <div class = "tavola tavolozza shad w-50 rad text-right pb-1 mt-5">
+      <div class = "tavola tavolozza shad w-50 pb-1 mt-5 pb-5">
        <h1 class=" text-center pb-5 "></h1>
-       <h1 class=" menu text-center text-white pb-4 ">MENU</h1>
+       <h1 class=" menu text-center text-white pb-4 mt-4">MENU'</h1>
        <h1 class=" text-center pb-5 "></h1>
       
-       
-       
-       <table class="table table-borderless" >
-        <thead>
-        <tr>
-           <th class = "text-center"></th>
-           <th class = "text-center"></th>  
-           <th class = "text-center"></th>  
-      
-    </tr>
-  </thead>
-  <tbody>
-      
-        <tr class = " body p1 my-4 text-white" th:each="ins : ${pizza} ">
-                    <td class = "col-1"></td>
-					<td class = "py-4 col-2 text-center" th:text="${ins.getNome()}"></td>
-					<td class =" pt-4 pb-4 pr-4 col-md-auto text-left"   th:text="${ins.getTipo()}"></td>	
-					<td class ="col-1 p2"> 
-					 <ul>
-					   <li th:each="c : ${ins.getListaIngredienti()}" th:text="${c.name}"> </li>
-					</ul>
-					</td>
-					<td class = "py-4 col-2 text-center" th:text="${ins.getPrezzo()}"></td>	
-					<td class = "col-1">
-					<a class="btn shad rounded-circle " th:href="@{|/delete/${ins.id}|}" title="Cancella" onclick="return confirm('Sei sicuro?')">&#10008;<i class="fa-solid fa-trash-can"></i></a>
-                    <a class="btn  shad mb-2 rounded-circle" th:href="@{|/add/${ins.id}|}"  >&#9998;</a> 
-                    
-                   
-         </td>	
-                   					
-        </tr>
-                    
-    </tbody> 
-      
-     </div>
- 
+    
+    <div class="text-white container-fluid d-flex" th:each="ins : ${pizza}"> 
+    <div class="container ms-5 me-3 my-3 p1">
+      <div class="d-flex">
+       <div th:text="${ins.getNome()}"></div>
+       <div class= "ms-2" th:text="${ins.getTipo()}"></div>
+         <div class= "ms-auto" th:text="${ins.getPrezzo()}"></div>
+    </div>
+    <div class="fontsizes">
+	<em class="d-flex"><div class="pl-4 ms-1" th:each="c : ${ins.getListaIngredienti()}" th:text="${c.name}"></div>
+	<p class="pl-4">....</p></em>				   
+	</div>
+    </div>
+    <div class="row p2 mt-4 mb-2 me-4">
+    <a class="text-decoration-none text-white " th:href="@{|/delete/${ins.id}|}" title="Cancella" onclick="return confirm('Sei sicuro?')">&#10008;<i class="fa-solid fa-trash-can"></i></a>
+    <a class="text-decoration-none text-white " th:href="@{|/add/${ins.id}|}"  >&#9998;</a> 
+    </div>
+    </div>
+    
+    
+    
+    
   </body>
 </html>

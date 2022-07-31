@@ -54,7 +54,7 @@ a:hover {
 }
 
 .tavolozza {
-  background-image: url('https://envato-shoebox-0.imgix.net/be29/1674-5875-42c7-b59e-3d54db4603c6/K-P-197-Chim-05421.jpg?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=1600&s=deb957f72b02abd02d16c60b159d1501');
+  background-image: url('/img/menu.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
@@ -107,3 +107,7 @@ border-radius: 20px;
 	
 }
 
+
+.mr{
+   margin-right: 0  !important;
+}
